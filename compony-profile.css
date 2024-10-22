@@ -1,0 +1,79 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9; /* Light background for the profile */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+    background-color: #3CB043; /* Consistent header color */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.company-images {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-grid {
+    display: none; /* Hide the grid by default */
+    flex-direction: column;
+    align-items: center; /* Center images horizontally */
+    gap: 40px; /* Add space between images */
+}
+
+.profile-image {
+    width: 100%; /* Ensure image takes up full width */
+    max-width: 1000px; /* Set a maximum width so it doesn’t get too large */
+    height: auto; /* Maintain aspect ratio */
+    max-height: calc(100vh - 100px); /* Limit height to fit within the viewport minus header and padding */
+    object-fit: contain; /* Ensure the entire image is visible without cropping */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a neat effect */
+}
+
+/* Navigation buttons */
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.navigation button {
+    background-color: #3CB043; /* Button background color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navigation button:hover {
+    background-color: #2E8B57; /* Darker green for hover effect */
+}
+
+/* Show the first image initially */
+.image-grid.show {
+    display: flex; /* Show the image grid when active */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .profile-image {
+        max-width: 90%; /* Slightly reduce the width on small screens */
+        max-height: calc(100vh - 80px); /* Adjust height to fit within smaller viewports */
+    }
+}
+
+footer {
+    background-color: #3CB043; /* Consistent footer color */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
