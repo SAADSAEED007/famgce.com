@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your stylesheet -->
+    <link rel="stylesheet" href="company-profile.css">
+    <style>
+        /* CSS styles for the image slider */
+        .company-images {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .profile-image {
+            max-width: 100%;
+            height: auto;
+            display: none; /* Hide all images by default */
+        }
+
+        .active {
+            display: block; /* Show the active image */
+        }
+
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-buttons button {
+            background-color: #3CB043;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .slider-buttons button:hover {
+            background-color: #2E8B57;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="company-images">
+        <div class="image-grid">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_1.jpg" alt="Description of image 1" class="profile-image active">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_2.jpg" alt="Description of image 2" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_3.jpg" alt="Description of image 3" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_4.jpg" alt="Description of image 4" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_5.jpg" alt="Description of image 5" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_6.jpg" alt="Description of image 6" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_7.jpg" alt="Description of image 7" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_8.jpg" alt="Description of image 8" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_9.jpg" alt="Description of image 9" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_10.jpg" alt="Description of image 10" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_11.jpg" alt="Description of image 11" class="profile-image">
+            <img src="INTRODUCTION PROFILE - FAMGCEn_12.jpg" alt="Description of image 12" class="profile-image">
+        </div>
+
+        <div class="slider-buttons">
+            <button onclick="changeImage(-1)">Previous</button>
+            <button onclick="changeImage(1)">Next</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Future Al Millennium General Contracting Est. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.profile-image');
+
+        function changeImage(direction) {
+            // Hide current image
+            images[currentImageIndex].classList.remove('active');
+
+            // Calculate new image index
+            currentImageIndex += direction;
+
+            // Handle edge cases
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1; // Wrap to last image
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0; // Wrap to first image
+            }
+
+            // Show new image
+            images[currentImageIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
